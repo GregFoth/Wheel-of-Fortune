@@ -197,14 +197,15 @@ export default function WheelOfFortuneGame() {
           <div className="mb-2 text-center text-sm font-medium text-amber-400">
             Category: {activePuzzle.category}
           </div>
-          <div className="rounded-lg bg-blue-950 p-4 font-mono text-amber-300">
-            <div className="mt-4 space-y-2 text-2xl tracking-widest text-center">
-              {maskedPhrase.split(" ").map((word, index) => (
-                <div key={index}>
-                  {word}
-                </div>
-              ))}
-            </div>
+          <div className="flex flex-wrap justify-center gap-2 rounded-lg bg-blue-950 p-4 font-mono text-2xl tracking-widest text-amber-300 md:text-4xl">
+            {maskedPhrase.split("").map((char, i) => (
+              <span
+                key={i}
+                className={`inline-block ${char === " " ? "w-4" : "min-w-[1.5rem] border-b-2 border-amber-500/50 text-center md:min-w-[2rem]"}`}
+              >
+                {char === "_" ? "\u00A0" : char}
+              </span>
+            ))}
           </div>
         </CardContent>
       </Card>
