@@ -45,7 +45,6 @@ export default function WheelOfFortuneGame() {
 
   const nextTurn = useCallback(() => {
     setCurrentTeam((t) => (t + 1) % scores.length);
-    setSpinResult(null);
   }, [scores.length]);
 
   const guessConsonant = useCallback(() => {
